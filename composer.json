@@ -1,0 +1,17 @@
+{
+  "name": "beejee/test",
+  "type": "project",
+  "description": "The BeeJee test.",
+  "license": "MIT",
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/",
+      "Core\\": "core/"
+    }
+  }
+}
