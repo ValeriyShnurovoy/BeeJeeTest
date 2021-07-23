@@ -25,6 +25,11 @@ class Select extends MySql
     protected $limitValue;
 
     /**
+     * @var int $offsetValue Offset rows value
+     */
+    protected $offsetValue;
+
+    /**
      * @var string $whereCondition Where condition
      */
     protected $whereCondition;
@@ -75,7 +80,15 @@ class Select extends MySql
      */
     public function limit(int $limit):void
     {
-        $this->limitValue = 'LIMIT ' . $limit;
+        $this->limitValue = $limit;
+    }
+
+    /**
+     * @param int $offset
+     */
+    public function offset(int $offset):void
+    {
+        $this->offsetValue = $offset;
     }
 
     /**
@@ -97,7 +110,9 @@ class Select extends MySql
 
     }
 
-
+    /**
+     * @return string
+     */
     public function getSqlString():string
     {
         $sql = 'SELECT ' . $this->columns . ' FROM ' . $this->table;
@@ -113,6 +128,10 @@ class Select extends MySql
         if (!empty($this->limitValue)) {
             $sql .= ' LIMIT ' . $this->limitValue;
         }
+        if (!empty($this->offsetValue)) {
+            $sql .= ' OFFSET ' . $this->offsetValue;
+        }
+
         return $sql;
     }
 

@@ -11,18 +11,14 @@ class View
     const FILE_EXTENSION_PHP = '.php';
 
     /**
-     * @param $contentView
-     * @param $templateView
-     * @param null $data
-     *
+     * @param string $contentView
+     * @param array $data
      * @throws \Exception
      */
-    public static function generate($contentView, $templateView, $data = null)
+    public static function generate(string $contentView, array $data = [])
     {
-        if(is_array($data)) {
-            // преобразуем элементы массива в переменные
-            extract($data);
-        }
+        // преобразуем элементы массива в переменные
+        extract($data);
 
         $templates = PUBLIC_ABSOLUTE_PATH . DIRECTORY_SEPARATOR . 'view'. DIRECTORY_SEPARATOR . $contentView . self::FILE_EXTENSION_PHP;
         if (file_exists($templates)) {

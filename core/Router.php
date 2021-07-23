@@ -2,6 +2,8 @@
 
 namespace Core;
 
+use App\Controllers\LoosController;
+
 /**
  * Router
  */
@@ -51,7 +53,8 @@ final class Router
             }
 
         } else {
-            throw new \Exception('Controller ' . $this->requestUri . ' absent');
+            $loos = new LoosController();
+            $loos->indexAction();
         }
     }
 
@@ -60,7 +63,7 @@ final class Router
      */
     private function setRoutes():void
     {
-        $this->routes = include APP_ABSOLUTE_PATH . DIRECTORY_SEPARATOR . 'Config' . DIRECTORY_SEPARATOR . 'route.php';
+        $this->routes = include APP_ABSOLUTE_PATH . DIRECTORY_SEPARATOR . 'Config' . DIRECTORY_SEPARATOR . 'Route.php';
     }
 
     private function setServerParams():void

@@ -4,6 +4,6 @@ return [
     'driver' => 'mysql',
     'host' => 'localhost',
     'bdName' => 'beejeetest',
-    'user' => 'root',
+    'UserSeeder' => 'root',
     'password' => 'root',
 ];
