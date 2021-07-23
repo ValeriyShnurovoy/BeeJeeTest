@@ -55,7 +55,7 @@ class Connector
             $this->dbName = $config['bdName'];
         }
         if (!empty($config['driver'])) {
-            $this->dbUser = $config['user'];
+            $this->dbUser = $config['UserSeeder'];
         }
         if (!empty($config['password'])) {
             $this->dbPass = $config['password'];

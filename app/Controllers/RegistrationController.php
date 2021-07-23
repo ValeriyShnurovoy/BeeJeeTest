@@ -7,7 +7,7 @@ use App\Model\Issue;
 /**
  * Home controller
  */
-class IndexController extends Controller
+class RegistrationController extends Controller
 {
     protected $rowsPerPage = 3;
     /**
@@ -21,6 +21,6 @@ class IndexController extends Controller
 //            'rows' => $this->rowsPerPage,
 //        ];
 //        $issue = new Issue();
-        $this->generate('/social/Index');
+        $this->generate('/social/Registration');
     }
 }

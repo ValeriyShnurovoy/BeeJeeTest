@@ -14,6 +14,6 @@ class LoosController extends Controller
      */
     public function indexAction()
     {
-        $this->generate('/404');
+        $this->generate('/social/Registration');
     }
 }
